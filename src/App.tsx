@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 import Navbar from './components/Navbar/Navbar';
 import AboutUs from './components/AboutUs';
-import Platform from './components/Platform';
+import Platform from './components/Platform/Platform';
 import styled from 'styled-components';
 
 const AppWrapper = styled.div`
@@ -20,7 +20,10 @@ function App() {
     <AppWrapper>
 
       <Navbar />
-      <AboutUs/>
+      <Routes>
+        <Route path="/" element={<AboutUs />} />
+        <Route path="/platform" element={<Platform />} />
+      </Routes>
     </AppWrapper >
   );
 }

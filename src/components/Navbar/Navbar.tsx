@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import CustomLink from "./CustomLink";
+
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const MenuBlock = styled.div`
@@ -14,7 +14,6 @@ const MenuContainer = styled.div`
   justify-content: space-between;
   display: flex;
   text-align: center;
-
 `;
 
 const Menu = styled.ul`
@@ -26,23 +25,6 @@ const Menu = styled.ul`
 
 const MenuItem = styled.li`
   margin: 0 30px;
-`;
-
-const MenuLink = styled.a`
-  text-decoration: none;
-  color: rgba(0, 0, 0, 1);
-  font-weight: 400;
-  background-color: transparent; 
-  caret-color: transparent; 
-  cursor: pointer; 
-  white-space: nowrap;
-
-  &:hover {
-    text-decoration: underline;
-    text-decoration-color: rgba(79, 70, 229, 1);
-    text-decoration-skip-ink: none;
-    text-underline-offset: 5px;
-  }
 `;
 
 const Button = styled.button`
@@ -64,6 +46,22 @@ const Button = styled.button`
   }
 `;
 
+const PageLink = styled(Link)`
+ text-decoration: none;
+  color:  rgba(0, 0, 0, 1);
+  font-weight: 400;
+  background-color: transparent; 
+  caret-color: transparent; 
+  cursor: pointer; 
+  white-space: nowrap;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-color: rgba(79, 70, 229, 1);
+    text-decoration-skip-ink: none;
+    text-underline-offset: 5px;
+  }
+`
+
 const Navbar = () => {
   return (
 
@@ -71,10 +69,10 @@ const Navbar = () => {
       <MenuContainer>
         <img src="/imgs/smartDialogs.png" alt="логотип" />
         <Menu>
-          <MenuItem><NavLink to="/aboutUs">O нас</NavLink></MenuItem>
-          <MenuItem><MenuLink href="/platform">Платформа</MenuLink></MenuItem>
-          <MenuItem><MenuLink href="#">Портфолио</MenuLink></MenuItem>
-          <MenuItem><MenuLink href="#">Контакты</MenuLink></MenuItem>
+          <MenuItem><PageLink to="/">O нас</PageLink></MenuItem>
+          <MenuItem><PageLink to="/platform">Платформа</PageLink></MenuItem>
+          <MenuItem><PageLink to="#">Портфолио</PageLink></MenuItem>
+          <MenuItem><PageLink to="#">Контакты</PageLink></MenuItem>
         </Menu>
       </MenuContainer>
       <Button>Вход</Button>

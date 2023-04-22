@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Container, FlexContainer } from '../styles';
 
 const Title = styled.p`
 text-align: left;
@@ -16,24 +17,10 @@ display: flex;
 padding: 50px 0px  50px 0px;
 `;
 
-const Container = styled.div`
-  position: relative;
-  text-align: left;
-`;
-
-
 const TopImage = styled.img`
 position: absolute; 
 top: 40px; 
 left: 40px;
-`;
-
-const FlexContainer = styled.div`
-justify-content: space-between;
-display: flex;
-text-align: center;
-margin-top: 120px;
-  align-items: center;
 `;
 
 const Block = styled.div`
