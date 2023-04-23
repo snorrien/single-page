@@ -27,7 +27,8 @@ const MenuItem = styled.li`
   margin: 0 30px;
 `;
 
-const Button = styled.button`
+const ButtonLink = styled(Link)`
+  text-decoration: none;
   background-color: #fbfbfb;
   color:#4F46E5;
   border: 1px solid #4F46E5;
@@ -40,6 +41,7 @@ const Button = styled.button`
   &:hover {
     background-color: #0062cc;
     color: #fff;
+    
   }
   &:active {
     transform: scale(0.95);
@@ -47,7 +49,7 @@ const Button = styled.button`
 `;
 
 const PageLink = styled(Link)`
- text-decoration: none;
+  text-decoration: none;
   color:  rgba(0, 0, 0, 1);
   font-weight: 400;
   background-color: transparent; 
@@ -75,7 +77,7 @@ const Navbar = () => {
           <MenuItem><PageLink to="#">Контакты</PageLink></MenuItem>
         </Menu>
       </MenuContainer>
-      <Button>Вход</Button>
+      
     </MenuBlock>
 
   )

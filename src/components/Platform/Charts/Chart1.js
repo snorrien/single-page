@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -10,7 +11,6 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -22,39 +22,60 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
+const ChartWrapper = styled.div`
+width: 645px;
+height: 398px;
+margin:10px;
+`;
+
+
+const Chart1 = () => {
+  const options = {
+    responsive: true,
     title: {
       display: true,
       text: 'Chart.js Line Chart',
     },
-  },
-};
-
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+    plugins: {
+      customCanvasBackgroundColor: {
+        color: 'rgba(79, 70, 229, 1)',
+      }
     },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(53, 162, 235)',
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
+    scales: {
+      y: {
+        ticks: {
+          stepSize: 4000,
+          min: 0,
+          max: 20000
+        }
+      },
     },
-  ],
-};
+  }
 
-export function App() {
-  return <Line options={options} data={data} />;
-}
+  const data= {
+    labels: ['22.08', '23.08', '24.08', '25.08', '26.08', '27.08', '28.08'],
+    datasets: [
+      {
+        label: 'Исходящие звонки',
+        data: [3600, 5000, 10500, 12000, 8700, 3824, 1650],
+        fill: false,
+        borderColor: 'rgba(79, 70, 229, 1)',
+        tension: 0.1
+      },
+      {
+        label: 'Входящие звонки',
+        data: [11500, 10027, 19000, 16500, 21000, 9700, 7000],
+        fill: false,
+        borderColor: 'rgba(234, 164, 58, 1)',
+        tension: 0.1
+      }
+    ]
+  };
+  
+  return (
+    <ChartWrapper>
+      <Line data={data} options={options} />
+      </ChartWrapper>
+  );
+};
+export default Chart1;

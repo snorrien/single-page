@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import { Container, FlexContainer } from '../../styles';
-import Chart1 from  "./Charts/Chart1"
-
-
+import Chart1 from './Charts/Chart1';
 
 const Title = styled.p`
 text-align: left;
@@ -40,6 +38,9 @@ const Platform = () => {
                 Уникальные виджеты позволяют настроить <br/>дашборд под задачи различных подразделений <br/>вашей компании
             </Text>
 
+                <Chart1 />
+
+            
         </div>
     )
 }
