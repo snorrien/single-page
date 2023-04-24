@@ -10,6 +10,7 @@ const Global = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Noto Sans', sans-serif;
+
   }
 `
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);

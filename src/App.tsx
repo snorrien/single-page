@@ -2,10 +2,10 @@ import { Route, Routes } from "react-router-dom"
 import Navbar from './components/Navbar/Navbar';
 import AboutUs from './components/AboutUs';
 import Platform from './components/Platform/Platform';
-import Enter from "./components/Enter/Enter";
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useState } from "react";
+import EnterPage from "./components/EnterPage/EnterPage";
 
 const AppWrapper = styled.div`
   width:100%;
@@ -13,6 +13,7 @@ const AppWrapper = styled.div`
   //padding:   20px   60px  0 60px  ;
   background-image: url("/imgs/group.png");
   background-size: cover;
+  user-select: none;
 `
 const MenuBlock = styled.div`
   justify-content: space-between;
@@ -61,7 +62,7 @@ function App() {
       <Routes>
         <Route path="/" element={<AboutUs />} />
         <Route path="/platform" element={<Platform />} />
-        <Route path="/enter" element={<Enter />} />
+        <Route path="/enter" element={<EnterPage />} />
       </Routes>
     </AppWrapper >
   );

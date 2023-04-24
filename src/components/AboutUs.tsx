@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, FlexContainer } from '../styles';
+import { Container, FlexContainer, BlueButton} from '../styles';
 
 const Title = styled.p`
 text-align: left;
@@ -16,13 +16,11 @@ line-height: 140%;
 display: flex;
 padding: 50px 0px  50px 0px;
 `;
-
 const TopImage = styled.img`
 position: absolute; 
 top: 40px; 
 left: 40px;
 `;
-
 const Block = styled.div`
 justify-content: space-between;
 display: flex;
@@ -34,7 +32,6 @@ border:1px solid rgba(228, 228, 231, 1);
 padding:25px;
 margin: 15px;
 `;
-
 const ArticleTitle = styled.p`
 text-align: left;
 font-weight: 600;
@@ -48,18 +45,6 @@ font-weight: 400;
 font-size: 16px;
 line-height: 22px;
 display: flex;
-`;
-
-const BlueButton = styled.button`
-background-color: #4F46E5;
-color: white;
-border: 1px solid;
-padding: 12px 24px;
-font-weight: 500;
-font-size: 16px;
-border-radius: 10px;
-cursor: pointer;
-transition: all 0.3s ease;
 `;
 
 const AboutUs = () => {
@@ -77,7 +62,9 @@ const AboutUs = () => {
                         В звонках бот ведёт осмысленный диалог <br /> и совершенно неотличим от живог оператора. <br />
                         Автоматизируйте телефонные звонки с помощью ИИ.
                     </Text>
-                    <BlueButton>Оставить заявку</BlueButton>
+                    <BlueButton fontSize ="20px" maxWith ="291px">
+                        Оставить заявку
+                    </BlueButton>
                 </Container>
                 <Container>
                     <img src="/imgs/Rectangle.png" alt="голубой квадрат" />
