@@ -9,7 +9,6 @@ export const FlexContainer = styled.div`
 justify-content: space-between;
 display: flex;
 text-align: center;
-margin-top: 120px;
   align-items: center;
 `;
 
@@ -40,6 +39,5 @@ export const Title = styled.p<Title>`
 color:rgba(17, 24, 39, 1);
 font-weight: ${props => props.fontWeight};
 font-size: ${props => props.fontSize};
-line-height: 32px;
 display: flex;
 `;

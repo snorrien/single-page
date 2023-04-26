@@ -6,27 +6,23 @@ const MenuBlock = styled.div`
   justify-content: space-between;
   display: flex;
   text-align: center;
-    vertical-align: middle;
-    align-items: center;
+  vertical-align: middle;
+  align-items: center;
 `;
-
 const MenuContainer = styled.div`
   justify-content: space-between;
   display: flex;
   text-align: center;
 `;
-
 const Menu = styled.ul`
   list-style: none;
   display: flex;
   margin: 0;
   padding-left: 130px;
 `;
-
 const MenuItem = styled.li`
   margin: 0 30px;
 `;
-
 const ButtonLink = styled(Link)`
   text-decoration: none;
   background-color: #fbfbfb;
@@ -41,13 +37,11 @@ const ButtonLink = styled(Link)`
   &:hover {
     background-color: #0062cc;
     color: #fff;
-    
   }
   &:active {
     transform: scale(0.95);
   }
 `;
-
 const PageLink = styled(Link)`
   text-decoration: none;
   color:  rgba(0, 0, 0, 1);

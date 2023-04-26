@@ -1,5 +1,13 @@
 import styled from 'styled-components';
-import { Container, FlexContainer, BlueButton} from '../styles';
+import { Container, FlexContainer, BlueButton } from '../../styles';
+
+const PageContainer = styled.div`
+height: 100vh;
+height: calc(100vh - 80px); // вычитаем высоту TopImage и задаем небольшой отступ сверху и снизу
+overflow: auto;
+padding: 0px 5%  0px 5%;
+
+`;
 
 const Title = styled.p`
 text-align: left;
@@ -17,10 +25,15 @@ display: flex;
 padding: 50px 0px  50px 0px;
 `;
 const TopImage = styled.img`
-position: absolute; 
-top: 40px; 
-left: 40px;
+ position: absolute; 
+ top: 40px; 
+ left: 40px;
+  object-fit: cover; 
+  max-width: 100%;
+  height: auto;
 `;
+
+
 const Block = styled.div`
 justify-content: space-between;
 display: flex;
@@ -47,9 +60,22 @@ line-height: 22px;
 display: flex;
 `;
 
+const BackgroundImage = styled.img`
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+`;
+
+const ImageWrapper = styled.div`
+  position: relative;
+  text-align: left;
+  margin: 40px;
+`;
+
 const AboutUs = () => {
     return (
-        <div>
+        <PageContainer>
             <FlexContainer>
                 <Container>
                     <Title color='rgba(0, 0, 0, 1)'>
@@ -59,19 +85,18 @@ const AboutUs = () => {
                         SmartDialogs
                     </Title>
                     <Text>
-                        В звонках бот ведёт осмысленный диалог <br /> и совершенно неотличим от живог оператора. <br />
+                        В звонках бот ведёт осмысленный диалог <br /> и совершенно неотличим от живого оператора. <br />
                         Автоматизируйте телефонные звонки с помощью ИИ.
                     </Text>
-                    <BlueButton fontSize ="20px" maxWith ="291px">
+                    <BlueButton fontSize="20px" maxWith="291px">
                         Оставить заявку
                     </BlueButton>
                 </Container>
-                <Container>
-                    <img src="/imgs/Rectangle.png" alt="голубой квадрат" />
-                    <TopImage src="/imgs/Photo.png" alt="фото девушки" />
-                </Container>
+                    <ImageWrapper>
+                        <BackgroundImage src="/imgs/Rectangle.png" alt="голубой квадрат" />
+                        <TopImage src="/imgs/Photo.png" alt="фото девушки" />
+                    </ImageWrapper>
             </FlexContainer>
-
             <FlexContainer>
                 <Children>
                     <ArticleTitle>3 года на рынке</ArticleTitle>
@@ -90,7 +115,7 @@ const AboutUs = () => {
                     <ArticleText>Отслеживание результатов звонков в личном кабинете</ArticleText>
                 </Children>
             </FlexContainer>
-        </div>
+        </PageContainer>
     )
 }
 

@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import Navbar from './components/Navbar/Navbar';
-import AboutUs from './components/AboutUs';
+import AboutUs from './components/AboutUs/AboutUs';
 import Platform from './components/Platform/Platform';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
@@ -8,19 +8,21 @@ import { useState } from "react";
 import EnterPage from "./components/EnterPage/EnterPage";
 
 const AppWrapper = styled.div`
-  width:100%;
-  min-height: 100vh;
-  //padding:   20px   60px  0 60px  ;
   background-image: url("/imgs/group.png");
+  height: 100vh;
+  overflow: auto;
+  align-items: center;
   background-size: cover;
-  user-select: none;
+  background-position: center;
+  background-attachment: fixed;
 `
 const MenuBlock = styled.div`
   justify-content: space-between;
   display: flex;
   text-align: center;
-    vertical-align: middle;
-    align-items: center;
+  vertical-align: middle;
+  align-items: center;
+  padding: 2% 5%  2% 5%;
 `;
 
 const ButtonLink = styled(Link)`
@@ -45,6 +47,12 @@ const ButtonLink = styled(Link)`
 `;
 
 
+const Body = styled.body`
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+`;
+
 
 function App() {
   const [showMenu, setShowMenu] = useState(true);
@@ -54,17 +62,21 @@ function App() {
   }
 
   return (
-    <AppWrapper>
-      {showMenu && (<MenuBlock >
-        <Navbar />
-        <ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>
-      </MenuBlock>)}
-      <Routes>
-        <Route path="/" element={<AboutUs />} />
-        <Route path="/platform" element={<Platform />} />
-        <Route path="/enter" element={<EnterPage />} />
-      </Routes>
-    </AppWrapper >
+
+      <Body>
+        <AppWrapper>
+          {showMenu && (<MenuBlock >
+            <Navbar />
+            <ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>
+          </MenuBlock>)}
+          <Routes>
+            <Route path="/" element={<AboutUs />} />
+            <Route path="/platform" element={<Platform />} />
+            <Route path="/enter" element={<EnterPage />} />
+          </Routes>
+        </AppWrapper >
+      </Body>
+
   );
 }
 

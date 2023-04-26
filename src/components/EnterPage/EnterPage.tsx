@@ -17,53 +17,61 @@ const Column = styled.div`
   height: 100vh;
   padding:10px;
 `;
-
-
-
-
-const Text = styled.p`
-color:rgba(17, 24, 39, 1);
-font-weight: 400;
-font-size: 16px;
-line-height: 24px;
-text-align: center;
-display: flex;
-padding: 50px 0px  50px 0px;
-`;
-
-const UnderImage = styled.img`
-  width: 100%;
-  object-fit: cover;
-  height: auto;
-  max-width: 100%;
-
-`;
-
-const TopImage = styled.img`
- position: absolute; 
- top: 50%;
- left:35%;
- max-width: 100%;
- width: 100%;
-  height: 100%;
-  object-fit: cover;
-  margin: 0 auto;
-`;
-const ImgContainer = styled.div`
-justify-content: left;
-  align-items: left;
- display: flex;
- position: relative;
- max-width: 80%;
- flex-direction: column;
-`;
 const Container = styled.div`
-justify-content: center;
-align-items: center;
- display: flex;
- position: relative;
- max-width: 80%;
- flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+`;
+const ImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+
+`;
+const BackgroundImage = styled.img`
+  display: block;
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  
+  margin-right: 20%;
+  margin-bottom:10%;
+`;
+const ForegroundImage = styled.img`
+  position: absolute;
+  object-fit: cover; 
+  max-width: 100%;
+  height: auto;
+  margin-left: 20%;
+  margin-top: 10%;
+`;
+const TextWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
+  padding: 10%;
+  color: #fff;
+`;
+const Text = styled.p`
+  color:rgba(17, 24, 39, 1);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  display: flex;
+  padding: 12px;
 `;
 
 const EnterPage = () => {
@@ -73,15 +81,16 @@ const EnterPage = () => {
         <Enter />
       </Column>
       <Column color='rgba(243, 243, 255, 1)'>
-        <ImgContainer>
-          <UnderImage src="/imgs/Calls.png" alt="логотип" />
-          <TopImage src="/imgs/Dashboard.png" alt="логотип" />
-        </ImgContainer>
         <Container>
-          <Title fontWeight='700' fontSize='20px'>Вся аналитика в одном кабинете</Title>
-          <Text>Теперь просматривать аналитику и создавать отчёты можно без нашей помощи</Text>
+          <ImageWrapper>
+            <BackgroundImage src="/imgs/Calls.png" alt="логотип" />
+            <ForegroundImage src="/imgs/Dashboard.png" alt="логотип" />
+            <TextWrapper>
+              <Title fontWeight='700' fontSize='20px'>Вся аналитика в одном кабинете</Title>
+              <Text>Теперь просматривать аналитику и создавать отчёты можно <br/>без нашей помощи</Text>
+            </TextWrapper>
+          </ImageWrapper>
         </Container>
-
       </Column>
     </EnterBlock>
   )
