@@ -22,7 +22,7 @@ const MenuBlock = styled.div`
   text-align: center;
   vertical-align: middle;
   align-items: center;
-  padding: 2% 5%  2% 5%;
+  padding: 2% 8%  2% 8%;
 `;
 
 const ButtonLink = styled(Link)`

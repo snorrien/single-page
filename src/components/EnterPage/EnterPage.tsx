@@ -40,7 +40,6 @@ const BackgroundImage = styled.img`
   object-fit: cover;
   max-width: 100%;
   height: auto;
-  
   margin-right: 20%;
   margin-bottom:10%;
 `;
@@ -82,14 +81,17 @@ const EnterPage = () => {
       </Column>
       <Column color='rgba(243, 243, 255, 1)'>
         <Container>
+        <ImageWrapper>
           <ImageWrapper>
             <BackgroundImage src="/imgs/Calls.png" alt="логотип" />
             <ForegroundImage src="/imgs/Dashboard.png" alt="логотип" />
-            <TextWrapper>
-              <Title fontWeight='700' fontSize='20px'>Вся аналитика в одном кабинете</Title>
-              <Text>Теперь просматривать аналитику и создавать отчёты можно <br/>без нашей помощи</Text>
-            </TextWrapper>
+            
           </ImageWrapper>
+          <TextWrapper>
+              <Title fontWeight='700' fontSize='20px'>Вся аналитика в одном кабинете</Title>
+              <Text>Теперь просматривать аналитику и создавать отчёты можно <br />без нашей помощи</Text>
+            </TextWrapper>
+            </ImageWrapper>
         </Container>
       </Column>
     </EnterBlock>

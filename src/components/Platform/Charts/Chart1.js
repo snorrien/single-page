@@ -1,26 +1,5 @@
-import React from 'react';
 import styled from 'styled-components';
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from 'chart.js';
 import { Line } from 'react-chartjs-2';
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
 
 const ChartWrapper = styled.div`
 width: 645px;
@@ -28,18 +7,12 @@ height: 398px;
 margin:10px;
 `;
 
-
 const Chart1 = () => {
   const options = {
     responsive: true,
     title: {
       display: true,
       text: 'Chart.js Line Chart',
-    },
-    plugins: {
-      customCanvasBackgroundColor: {
-        color: 'rgba(79, 70, 229, 1)',
-      }
     },
     scales: {
       y: {
@@ -50,9 +23,18 @@ const Chart1 = () => {
         }
       },
     },
-  }
 
-  const data= {
+    plugins: {
+      legend: {
+        labels: {
+          color: 'black'
+        }
+      }
+    },
+
+  };
+
+  const data = {
     labels: ['22.08', '23.08', '24.08', '25.08', '26.08', '27.08', '28.08'],
     datasets: [
       {
@@ -66,16 +48,19 @@ const Chart1 = () => {
         label: 'Входящие звонки',
         data: [11500, 10027, 19000, 16500, 21000, 9700, 7000],
         fill: false,
+
         borderColor: 'rgba(234, 164, 58, 1)',
         tension: 0.1
       }
     ]
   };
-  
+
+
+
   return (
     <ChartWrapper>
       <Line data={data} options={options} />
-      </ChartWrapper>
+    </ChartWrapper>
   );
 };
 export default Chart1;

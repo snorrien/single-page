@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { Container, FlexContainer } from '../../styles';
 import Chart1 from './Charts/Chart1';
+import BarChart from './Charts/BarChart';
+import { PageContainer } from '../../styles';
+
 
 const Title = styled.p`
 text-align: left;
@@ -21,7 +24,7 @@ padding: 90px 0px  70px 0px;
 
 const Platform = () => {
     return (
-        <div>
+        <PageContainer>
             <FlexContainer>
                 <Container>
                     <Title>
@@ -35,13 +38,11 @@ const Platform = () => {
                 </Container>
             </FlexContainer>
             <Text >
-                Уникальные виджеты позволяют настроить <br/>дашборд под задачи различных подразделений <br/>вашей компании
+                Уникальные виджеты позволяют настроить <br />дашборд под задачи различных подразделений <br />вашей компании
             </Text>
+            <BarChart />
 
-                <Chart1 />
-
-            
-        </div>
+        </PageContainer>
     )
 }
 

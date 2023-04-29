@@ -11,7 +11,6 @@ const Container = styled.form`
   width: 100%;
   max-width: 408px;
 `;
-
 const InputContainer = styled.form`
   display: flex;
   justify-content: center; 
@@ -21,7 +20,6 @@ const InputContainer = styled.form`
   width: 100%;
   max-width: 408px;
 `;
-
 const InputWrapper = styled.div`
 align-items: left;
   justify-content: left;
@@ -32,7 +30,6 @@ align-items: left;
   position: relative;
   max-width: 408px;
 `;
-
 const Input = styled.input`
  background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(228, 228, 231, 1);
@@ -52,10 +49,8 @@ const EyeIcon = styled.img`
  transform: translateY(-50%);
  cursor: pointer;
 `;
-
 const Img = styled.div`
 padding-bottom: 75px;
-
 `;
 
 const Enter = () => {
@@ -83,42 +78,42 @@ const Enter = () => {
         <Container>
             <Container>
                 <Img>
-                <img src="/imgs/smallLogo.png" alt="логотип" />
+                    <img src="/imgs/smallLogo.png" alt="логотип" />
                 </Img>
-            
-            <Title fontWeight='500' fontSize='28px'>Вход</Title>
+
+                <Title fontWeight='500' fontSize='28px'>Вход</Title>
             </Container>
-                    
-                <InputContainer onSubmit={handleSubmit}>
-                    <InputWrapper>
-                        <Input
-                            type="text"
-                            placeholder="Email"
-                            title="Email"
-                            value={email} onChange={handleEmailChange} />
-                    </InputWrapper>
-                    <InputWrapper>
-                        <Input
-                            type={showPassword ? "text" : "password"}
-                            placeholder="Пароль"
-                            title="password"
-                            value={password}
-                            onChange={handlePasswordChange}
-                        />
-                        <EyeIcon
-                            src="/imgs/eyeOn.png"
-                            alt={showPassword ? "Скрыть пароль" : "Показать пароль"}
-                            onClick={toggleShowPassword}
-                        />
-                    </InputWrapper>
-                    <InputWrapper>
-                        <BlueButton fontSize="16px" maxWith="408px">
-                            Войти
-                        </BlueButton>
-                    </InputWrapper>
-                </InputContainer>
-            </Container>
-            )
+
+            <InputContainer onSubmit={handleSubmit}>
+                <InputWrapper>
+                    <Input
+                        type="text"
+                        placeholder="Email"
+                        title="Email"
+                        value={email} onChange={handleEmailChange} />
+                </InputWrapper>
+                <InputWrapper>
+                    <Input
+                        type={showPassword ? "text" : "password"}
+                        placeholder="Пароль"
+                        title="password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                    />
+                    <EyeIcon
+                        src="/imgs/eyeOn.png"
+                        alt={showPassword ? "Скрыть пароль" : "Показать пароль"}
+                        onClick={toggleShowPassword}
+                    />
+                </InputWrapper>
+                <InputWrapper>
+                    <BlueButton fontSize="16px" maxWith="408px">
+                        Войти
+                    </BlueButton>
+                </InputWrapper>
+            </InputContainer>
+        </Container>
+    )
 }
 
-            export default Enter;
+export default Enter;
