@@ -81,6 +81,10 @@ const Text = styled.p`
 `;
 
 const EnterPage = () => {
+  //function handleEnterClick(): void {
+  //  throw new Error('Function not implemented.');
+ // }
+
   return (
     <EnterBlock>
       <Column color='#F5F5F5'>

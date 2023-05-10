@@ -2,6 +2,7 @@ import { useState } from "react";
 import styled from 'styled-components';
 import { BlueButton, FlexContainer } from "../../styles";
 import { Title } from "../../styles";
+import { Link } from 'react-router-dom';
 
 const Container = styled.div`
   display: flex;
@@ -83,66 +84,71 @@ const Enter = () => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(event.target.value);
+        setEmail(event.target.value.trim());
     };
 
     const handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
+        setPassword(event.target.value.trim());
     };
 
     const toggleShowPassword = () => {
         setShowPassword(!showPassword);
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {                          
         event.preventDefault();
-    };
+};
 
-    return (
+const isFormValid = email !== '' && password !== '';
+
+return (
+    <Container>
         <Container>
-            <Container>
-                <Img>
-                    <img src="/imgs/smallLogo.png" alt="логотип" />
-                </Img>
-                <Title fontWeight='500' fontSize='28px'>Вход</Title>
-            </Container>
-            <InputContainer onSubmit={handleSubmit}>
-                <InputWrapper>
-                    <Input
-                        type="text"
-                        placeholder="Email"
-                        title="Email"
-                        value={email} onChange={handleEmailChange} />
-                </InputWrapper>
-                <InputWrapper>
-                    <Input
-                        type={showPassword ? "text" : "password"}
-                        placeholder="Пароль"
-                        title="password"
-                        value={password}
-                        onChange={handlePasswordChange}
-                    />
-                    <EyeIcon
-                        src="/imgs/eyeOn.png"
-                        alt={showPassword ? "Скрыть пароль" : "Показать пароль"}
-                        onClick={toggleShowPassword}
-                    />
-                </InputWrapper>
-                <CheckContainer>
-                    <CheckWrapper>
-                        <Checkbox type="checkbox" />
-                        <label>Запомнить меня</label>
-                    </CheckWrapper>
-                    <p>Забыли пароль?</p>
-                </CheckContainer>
-                <InputWrapper>
-                    <BlueButton fontSize="16px" maxWith="408px">
-                        Войти
-                    </BlueButton>
-                </InputWrapper>
-            </InputContainer>
+            <Img>
+                <img src="/imgs/smallLogo.png" alt="логотип" />
+            </Img>
+            <Title fontWeight='500' fontSize='28px'>Вход</Title>
         </Container>
-    )
+        <InputContainer onSubmit={handleSubmit}>
+            <InputWrapper>
+                <Input
+                    type="text"
+                    placeholder="Email"                                                                                                      
+                    title="Email"     
+                    value={email}
+                    onChange={handleEmailChange} />
+            </InputWrapper>
+            <InputWrapper>
+                <Input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Пароль"
+                    title="password"
+                    value={password}
+                    onChange={handlePasswordChange}
+                />
+                <EyeIcon
+                    src="/imgs/eyeOn.png"
+                    alt={showPassword ? "Скрыть пароль" : "Показать пароль"}
+                    onClick={toggleShowPassword}
+                />
+            </InputWrapper>
+            <CheckContainer>
+                <CheckWrapper>
+                    <Checkbox type="checkbox" />
+                    <label>Запомнить меня</label>
+                </CheckWrapper>
+                <p>Забыли пароль?</p>
+            </CheckContainer>
+            <InputWrapper>
+                <Link to={"/"}>
+                <BlueButton fontSize="16px" maxWith="408px" type="submit" disabled={!isFormValid} >
+                    Войти
+                    </BlueButton>
+                </Link>
+            </InputWrapper>
+        </InputContainer>
+    </Container>
+)
 }
 
 export default Enter;

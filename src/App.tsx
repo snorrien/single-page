@@ -47,16 +47,15 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-
 const Body = styled.div`
   height: 100%;
   margin: 0;
   padding: 0px;
 `;
 
-
 function App() {
   const [showMenu, setShowMenu] = useState(true);
+  const [loggedIn, setLoggedIn] = useState(false);
 
    function handleClick() {
     //setShowMenu(false);
@@ -72,12 +71,13 @@ function App() {
  // }, []); 
 
   return (
-
       <Body>
         <AppWrapper>
           {showMenu && (<MenuBlock >
-            <Navbar />
-            <ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>
+          <Navbar />
+        
+          <ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>
+          
           </MenuBlock>)}
           <Routes>
             <Route path="/" element={<AboutUs />} />
