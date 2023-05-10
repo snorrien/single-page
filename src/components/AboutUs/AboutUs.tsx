@@ -2,31 +2,30 @@ import styled from 'styled-components';
 import { Container, FlexContainer, BlueButton, PageContainer, ArticleTitle, ArticleText } from '../../styles';
 
 const TopImage = styled.img`
- position: absolute; 
- top: 40px; 
- left: 40px;
- object-fit: cover; 
- max-width: 100%;
- height: auto;
+  position: absolute; 
+  top: 40px; 
+  left: 40px;
+  object-fit: cover; 
+  max-width: 100%;
+  height: auto;
 `;
-
 const ChildrenContainer = styled.div`
-padding: 50px 0px  50px 0px;
+  padding: 50px 0px  50px 0px;
 `;
 const Children = styled.div`
- text-align: center;
- background-color: rgba(255, 255, 255, 1);
- border:1px solid rgba(228, 228, 231, 1);
- padding:25px;
- margin: 15px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border:1px solid rgba(228, 228, 231, 1);
+  padding:25px;
+  margin: 15px;
 `;
 const Text = styled.p`
-text-align: left;
-font-weight: 400;
-font-size: 24px;
-line-height: 140%;
-display: flex;
-padding: 50px 0px  50px 0px;
+  text-align: left;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 140%;
+  display: flex;
+  padding: 50px 0px  50px 0px;
 `;
 const BackgroundImage = styled.img`
   display: block;

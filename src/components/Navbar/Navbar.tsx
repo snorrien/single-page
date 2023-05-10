@@ -60,7 +60,6 @@ const PageLink = styled(Link)`
 
 const Navbar = () => {
   return (
-
     <MenuBlock>
       <MenuContainer>
         <img src="/imgs/smartDialogs.png" alt="логотип" />
@@ -71,9 +70,7 @@ const Navbar = () => {
           <MenuItem><PageLink to="#">Контакты</PageLink></MenuItem>
         </Menu>
       </MenuContainer>
-      
     </MenuBlock>
-
   )
 }
 

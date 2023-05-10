@@ -4,7 +4,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import Platform from './components/Platform/Platform';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import EnterPage from "./components/EnterPage/EnterPage";
 
 const AppWrapper = styled.div`
@@ -35,6 +35,7 @@ const ButtonLink = styled(Link)`
   font-size: 16px;
   border-radius: 10px;
   cursor: pointer;
+  user-select: none;
   transition: all 0.3s ease;
   &:hover {
     background-color: #0062cc;
@@ -47,7 +48,7 @@ const ButtonLink = styled(Link)`
 `;
 
 
-const Body = styled.body`
+const Body = styled.div`
   height: 100%;
   margin: 0;
   padding: 0px;
@@ -57,9 +58,18 @@ const Body = styled.body`
 function App() {
   const [showMenu, setShowMenu] = useState(true);
 
-  function handleClick() {
-    setShowMenu(!showMenu);
+   function handleClick() {
+    //setShowMenu(false);
+   // localStorage.setItem('menuHidden', 'true');
+   setShowMenu(!showMenu);
   }
+  
+  //useEffect(() => {
+   // const menuHidden = localStorage.getItem('menuHidden');
+  //  if (menuHidden === 'true') {
+ //     setShowMenu(false);
+  //  }
+ // }, []); 
 
   return (
 
@@ -74,7 +84,7 @@ function App() {
             <Route path="/platform" element={<Platform />} />
             <Route path="/enter" element={<EnterPage />} />
           </Routes>
-        </AppWrapper >
+          </AppWrapper>
       </Body>
 
   );

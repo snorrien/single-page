@@ -1,15 +1,16 @@
 import { useState } from "react";
 import styled from 'styled-components';
-import { BlueButton } from "../../styles";
+import { BlueButton, FlexContainer } from "../../styles";
 import { Title } from "../../styles";
 
-const Container = styled.form`
+const Container = styled.div`
   display: flex;
   justify-content: left; 
   align-items: left;
   flex-direction: column;
   width: 100%;
   max-width: 408px;
+  user-select: none;
 `;
 const InputContainer = styled.form`
   display: flex;
@@ -19,9 +20,10 @@ const InputContainer = styled.form`
   gap: 14px;
   width: 100%;
   max-width: 408px;
+  margin-top: 30px
 `;
 const InputWrapper = styled.div`
-align-items: left;
+  align-items: left;
   justify-content: left;
   width: 100%;
   margin-bottom: 10px;
@@ -31,7 +33,7 @@ align-items: left;
   max-width: 408px;
 `;
 const Input = styled.input`
- background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 1);
   border: 1px solid rgba(228, 228, 231, 1);
   border-radius: 10px;
   outline: none;
@@ -42,6 +44,28 @@ const Input = styled.input`
   max-width: 408px;
   font-size: 16px;
 `;
+const CheckContainer = styled.div`
+  display: flex;
+  justify-content: space-between; 
+  width: 100%;
+  max-width: 408px;
+`;
+
+const CheckWrapper = styled.div`
+  justify-content: left; 
+  align-items: left;
+  display: flex;
+`;
+
+const Checkbox = styled.input`
+border-color: rgba(228, 228, 231, 1);
+  border-radius: 2px;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1.1;
+  display: grid;
+  grid-template-columns: 1em auto;
+  `;
 const EyeIcon = styled.img`
  position: absolute;
  right: 16px;
@@ -50,7 +74,7 @@ const EyeIcon = styled.img`
  cursor: pointer;
 `;
 const Img = styled.div`
-padding-bottom: 75px;
+  padding-bottom: 75px;
 `;
 
 const Enter = () => {
@@ -80,10 +104,8 @@ const Enter = () => {
                 <Img>
                     <img src="/imgs/smallLogo.png" alt="логотип" />
                 </Img>
-
                 <Title fontWeight='500' fontSize='28px'>Вход</Title>
             </Container>
-
             <InputContainer onSubmit={handleSubmit}>
                 <InputWrapper>
                     <Input
@@ -106,6 +128,13 @@ const Enter = () => {
                         onClick={toggleShowPassword}
                     />
                 </InputWrapper>
+                <CheckContainer>
+                    <CheckWrapper>
+                        <Checkbox type="checkbox" />
+                        <label>Запомнить меня</label>
+                    </CheckWrapper>
+                    <p>Забыли пароль?</p>
+                </CheckContainer>
                 <InputWrapper>
                     <BlueButton fontSize="16px" maxWith="408px">
                         Войти
