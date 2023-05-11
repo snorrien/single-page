@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import EnterPage from "./components/EnterPage/EnterPage";
 
+const Body = styled.div`
+  height: 100%;
+  margin: 0;
+  padding: 0px;
+`;
+
 const AppWrapper = styled.div`
   background-image: url("/imgs/group.png");
   height: 100vh;
@@ -47,45 +53,50 @@ const ButtonLink = styled(Link)`
   }
 `;
 
-const Body = styled.div`
-  height: 100%;
-  margin: 0;
-  padding: 0px;
+const LogIn = styled.div`
+  display: flex;
+  text-align: center;
+  align-items: center;
+  padding: 12px 24px;
+  color:#4F46E5;
+  text-decoration: underline;
+  text-decoration-color: rgba(79, 70, 229, 1);
+  text-decoration-skip-ink: none;
+  text-underline-offset: 5px;
 `;
 
 function App() {
   const [showMenu, setShowMenu] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
 
-   function handleClick() {
-    //setShowMenu(false);
-   // localStorage.setItem('menuHidden', 'true');
-   setShowMenu(!showMenu);
+  function handleClick() {
+    setShowMenu(false);
   }
-  
-  //useEffect(() => {
-   // const menuHidden = localStorage.getItem('menuHidden');
-  //  if (menuHidden === 'true') {
- //     setShowMenu(false);
-  //  }
- // }, []); 
+  function visibleMenu() {
+    setShowMenu(true);
+  }
+  function showUser() {
+    setLoggedIn(true);
+}
 
   return (
-      <Body>
-        <AppWrapper>
-          {showMenu && (<MenuBlock >
+    <Body>
+      <AppWrapper>
+        {showMenu && (<MenuBlock >
           <Navbar />
-        
-          <ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>
-          
-          </MenuBlock>)}
-          <Routes>
-            <Route path="/" element={<AboutUs />} />
-            <Route path="/platform" element={<Platform />} />
-            <Route path="/enter" element={<EnterPage />} />
-          </Routes>
-          </AppWrapper>
-      </Body>
+          {!loggedIn ? (<ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>) :
+          (<LogIn>
+            <p>Антон З.</p>
+            <img src="/imgs/Tabler.png" />
+          </LogIn>)}
+        </MenuBlock>)}
+        <Routes>
+          <Route path="/" element={<AboutUs />} />
+          <Route path="/platform" element={<Platform />} />
+          <Route path="/enter" element={<EnterPage showUser={showUser} visibleMenu={visibleMenu} />} />
+        </Routes>
+      </AppWrapper>
+    </Body>
 
   );
 }

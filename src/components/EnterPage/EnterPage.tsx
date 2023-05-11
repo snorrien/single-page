@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Enter from './Enter';
+import Enter from './Enter/Enter';
 import { Title } from '../../styles';
 
 const EnterBlock = styled.div`
@@ -80,15 +80,16 @@ const Text = styled.p`
   padding: 12px;
 `;
 
-const EnterPage = () => {
-  //function handleEnterClick(): void {
-  //  throw new Error('Function not implemented.');
- // }
+type Props = {
+  showUser: () => void;
+  visibleMenu: () => void;
+};
 
+const EnterPage = ({ showUser, visibleMenu }: Props) => {
   return (
     <EnterBlock>
       <Column color='#F5F5F5'>
-        <Enter />
+        <Enter showUser={showUser}  visibleMenu={visibleMenu}/>
       </Column>
       <Column color='rgba(243, 243, 255, 1)'>
         <Container>
