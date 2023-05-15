@@ -12,7 +12,6 @@ const Body = styled.div`
   margin: 0;
   padding: 0px;
 `;
-
 const AppWrapper = styled.div`
   background-image: url("/imgs/group.png");
   height: 100vh;
@@ -30,7 +29,6 @@ const MenuBlock = styled.div`
   align-items: center;
   padding: 2% 8%  2% 8%;
 `;
-
 const ButtonLink = styled(Link)`
   text-decoration: none;
   background-color: #fbfbfb;
@@ -46,13 +44,11 @@ const ButtonLink = styled(Link)`
   &:hover {
     background-color: #0062cc;
     color: #fff;
-    
   }
   &:active {
     transform: scale(0.95);
   }
 `;
-
 const LogIn = styled.div`
   display: flex;
   text-align: center;
@@ -69,6 +65,17 @@ function App() {
   const [showMenu, setShowMenu] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
 
+  useEffect(() => {
+    const storedMenuVisibility = localStorage.getItem('menuVisibility');
+    if (storedMenuVisibility) {
+      setShowMenu(storedMenuVisibility === 'true');
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('menuVisibility', String(showMenu));
+  }, [showMenu]);
+
   function handleClick() {
     setShowMenu(false);
   }
@@ -77,7 +84,7 @@ function App() {
   }
   function showUser() {
     setLoggedIn(true);
-}
+  }
 
   return (
     <Body>
@@ -85,10 +92,10 @@ function App() {
         {showMenu && (<MenuBlock >
           <Navbar />
           {!loggedIn ? (<ButtonLink to="/enter" onClick={handleClick}>Вход</ButtonLink>) :
-          (<LogIn>
-            <p>Антон З.</p>
-            <img src="/imgs/Tabler.png" />
-          </LogIn>)}
+            (<LogIn>
+              <p>Антон З.</p>
+              <img src="/imgs/Tabler.png" />
+            </LogIn>)}
         </MenuBlock>)}
         <Routes>
           <Route path="/" element={<AboutUs />} />
@@ -97,7 +104,6 @@ function App() {
         </Routes>
       </AppWrapper>
     </Body>
-
   );
 }
 

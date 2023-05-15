@@ -19,6 +19,5 @@ root.render(
     <Global/>
     <App />
   </Router>
-
 );
 

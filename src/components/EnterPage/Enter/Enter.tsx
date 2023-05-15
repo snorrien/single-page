@@ -51,13 +51,11 @@ const CheckContainer = styled.div`
   width: 100%;
   max-width: 408px;
 `;
-
 const CheckWrapper = styled.div`
   justify-content: left; 
   align-items: left;
   display: flex;
 `;
-
 const Checkbox = styled.input`
 border-color: rgba(228, 228, 231, 1);
   border-radius: 2px;

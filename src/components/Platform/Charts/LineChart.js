@@ -1,10 +1,7 @@
 import { useEffect, useRef } from 'react';
-import styled from 'styled-components';
 import Chart from 'chart.js/auto';
-
-const Canvas = styled.canvas`
-  height: 40vh;
-`;
+import { ChartCard, ChartContainer, ChartTitle, Canvas, FlexContainer } from '../../../styles';
+import styled from 'styled-components';
 
 
 const LineChart = () => {
@@ -53,7 +50,7 @@ const LineChart = () => {
             options: {
                 bezierCurve: true,
                 locale: 'ru-RU',
-                responsive:true,
+                responsive: true,
                 scales: {
                     y: {
                         border: {
@@ -111,7 +108,17 @@ const LineChart = () => {
     }, []);
 
     return (
-            <Canvas id="myChart2" ref={chartRefs}></Canvas>
+        <ChartContainer>
+            <FlexContainer>
+                <ChartTitle>
+                    Звонки
+                </ChartTitle>
+                <img src="/imgs/More-vert.png" alt="точки" />
+            </FlexContainer>
+            <ChartCard>
+                    <Canvas id="myChart2" ref={chartRefs} />
+            </ChartCard>
+        </ChartContainer>
 
     );
 };

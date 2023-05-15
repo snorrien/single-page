@@ -17,7 +17,6 @@ const Column = styled.div`
   height: 100vh;
   padding:10px;
 `;
-
 const Container = styled.div`
   position: relative;
   width: 100%;
@@ -37,7 +36,6 @@ const ImageWrapper = styled.div`
   height: 100%;
   user-select: none;
   grid-row: 1 / 2;
-
 `;
 const BackgroundImage = styled.img`
   display: block;

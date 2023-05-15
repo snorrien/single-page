@@ -63,7 +63,6 @@ const AboutUs = () => {
                     <TopImage src="/imgs/Photo.png" alt="фото девушки" />
                 </ImageWrapper>
             </FlexContainer>
-
             <ChildrenContainer>
                 <FlexContainer>
                     <Children>
@@ -98,7 +97,6 @@ const AboutUs = () => {
                             fontSize='20px'>Личный кабинет</ArticleTitle>
                         <ArticleText>Отслеживание результатов звонков в личном кабинете</ArticleText>
                     </Children>
-
                 </FlexContainer>
             </ChildrenContainer>
         </PageContainer>

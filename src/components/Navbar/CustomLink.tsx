@@ -6,13 +6,10 @@ type CustomLinkProps = {
   to: string;
   children: React.ReactNode;
 };
-
 type PageLinkProps = {
   isActive?: boolean;
 };
-
 const PageLink = styled.a<PageLinkProps>`
- 
 `;
 
 const CustomLink: React.FC<CustomLinkProps> = ({ to, children, ...props }) => {
