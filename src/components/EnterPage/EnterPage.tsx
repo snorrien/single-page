@@ -14,7 +14,7 @@ const Column = styled.div`
   align-items: center;
   background-color: ${props => props.color};
   width: 100%;
-  height: 100vh;
+  height: 100%;
   padding:10px;
 `;
 const Container = styled.div`
